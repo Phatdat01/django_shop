@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Tour
 from django.http import HttpResponse
 from .form import ContactForm
+from django.views import View
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -66,3 +67,14 @@ def logout_view(request):
         return redirect("login")
     else:
         return redirect('home')
+    
+@login_required
+def home_view(request):
+    return render(request, 'home/home.html')
+
+class ProtectedView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'
+
+    def get(self, request):
+        return render(request, 'registration/protected.html')
