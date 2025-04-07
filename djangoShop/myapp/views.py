@@ -3,5 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+# def index(request):
+#     return HttpResponse("Asia shop")
+
 def index(request):
-    return HttpResponse("Asia shop")
+    return render(request, 'tours/index.html')
