@@ -9,3 +9,11 @@ body{
 img {
     border-radius: 50%;
 }
+
+button.btn {
+    padding: 10px;
+    background: #26c2ce;
+    border-radius: 5px;
+    color: #f9f9f9;
+    font-weight: bold;
+}
