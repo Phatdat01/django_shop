@@ -7,4 +7,4 @@ class Tour(models.Model):
     price = models.IntegerField()
 
     def  __str__(self):
-        return (f"ID:{self.id} price {self.price}")
+        return (f"ID:{self.id} {self.name} have price {self.price}.000 VND")
